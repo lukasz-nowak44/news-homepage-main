@@ -1,0 +1,263 @@
+:root {
+  --very-dark-blue: hsl(240, 100%, 5%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --off-white: hsl(36, 100%, 99%);
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --shadow-button: hsla(240, 100%, 5%, 0.22);
+}
+
+body {
+  font-size: 15px;
+  color: var(--dark-grayish-blue);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  background-color: var(--off-white);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 7fr;
+  width: 100%;
+  max-width: 76rem;
+  box-sizing: border-box;
+  padding: 2rem 3.5rem;
+}
+
+.logo {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+p {
+  line-height: 1.8; 
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: right;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar { 
+  display: flex;
+  gap: 2.5rem; 
+}
+
+.navbar a {
+  color: var(--dark-grayish-blue);
+}
+
+.hamburger {
+  display: none;
+}
+
+main {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 4fr 3fr 3fr;
+  gap: 2rem;
+}
+
+.main-image {
+  grid-column: span 2;
+  display: flex;
+}
+
+.main-image img {
+  width: 100%;
+}
+
+.new {
+  grid-row: span 2;
+  background-color: var(--very-dark-blue);
+  color: var(--off-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.new h2 {
+ color: var(--soft-orange);
+ font-size: 2.5rem;
+ margin: 0;
+}
+
+.new a {
+  color: var(--off-white);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.new a:hover {
+  color: var(--soft-orange);
+}
+
+.new p {
+  color: var(--grayish-blue);
+}
+
+.division {
+  border-top: 1px solid var(--grayish-blue);
+}
+
+.main-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-article p {
+  margin-top: 0;
+}
+
+h1 {
+  color: var(--very-dark-blue);
+  font-size: 3.3rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+}
+
+.btn {
+  background-color: var(--soft-red);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0.75rem 2rem;
+  border: none;
+  box-shadow: 0px 0px 6px 1px var(--shadow-button) inset;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--very-dark-blue);
+  color: var(--off-white);
+}
+
+.top {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.top h2 {
+  color: var(--soft-red);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.top h3 {
+  color: var(--very-dark-blue);
+  font-weight: 800;
+  margin: 0.5rem;
+}
+
+.top p {
+  margin-top: 0;
+}
+
+.top img {
+  float: left;
+  margin-right: 1.4rem;
+  max-height: 8rem;
+}
+
+.attribution {
+  font-size: 0.6875rem; 
+  text-align: center; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+a {
+  text-decoration: none;
+  color: var(--very-dark-blue);
+}
+
+a:hover {
+  color: var(--soft-red);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--soft-red);
+  outline-offset: 3px;
+}
+
+.navbar-mobile {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  height: 100dvh;
+  width: 0%;
+  background-color: var(--off-white);
+  font-size: 1.2rem;
+  line-height: 3;
+  box-shadow: 0px 0px 0px 1000px hsla(240, 100%, 5%, 0.5);
+  padding-top: 10rem;
+  margin: 0;
+}
+
+@media (max-width: 63rem){
+
+  .container {
+    padding: 0.5rem 1rem;
+    grid-template-rows: 100px auto;
+  } 
+
+  .navbar {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    border: none;
+    background-color: inherit;
+    z-index: 2;
+  }
+
+  .hamburger:hover {
+    cursor: pointer;
+    border: 3px solid var(--soft-orange);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .main-image {
+    grid-column: span 1;
+  }
+
+   .new {
+    order: 1;
+  }
+
+  .top {
+    order: 2;
+  }
+
+}
+
